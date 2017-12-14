@@ -10,6 +10,7 @@ if (isset($_GET['action'])){
 		case "stop":
 			$output = shell_exec('mpc stop');
 		break;
+
 		case "toggle":
 			$output = shell_exec('mpc toggle');
 		break;
@@ -28,7 +29,7 @@ body {
   background: black;
   color: green;
   font-family: 'VT323', monospace;
-  font-size: 22px;
+  font-size: 28px;
 }
 
 .button {
@@ -44,7 +45,7 @@ body {
 <title>Radio Pi-radise</title>
 </head>
 <body>
-<?php echo $output; ?>
+<marquee><?php echo $output; ?></marquee>
 <hr>
 <a class="button" href="/?action=play">play</a>
 <a class="button" href="/?action=stop">stop</a>
