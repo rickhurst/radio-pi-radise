@@ -19,6 +19,13 @@ if (isset($_GET['action'])){
 } else {
 	$output = shell_exec('mpc status');
 }
+
+$output_parts = explode(":", $output);
+
+if(isset($output_parts[2])){
+	$output = $output_parts[2];
+}
+
 ?>
 <html>
 <head>
